@@ -1,0 +1,19 @@
+{
+  "name": "backendproject1",
+  "version": "1.0.0",
+  "description": "An api to manage a store products and clients.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhadechni/backendproject1.git"
+  },
+  "author": "jhadechni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhadechni/backendproject1/issues"
+  },
+  "homepage": "https://github.com/jhadechni/backendproject1#readme"
+}
