@@ -1,6 +1,5 @@
 const controller = {};
 const postsModel = require('../models/postModel.js');
-const { post } = require('../routes/post_routes.js');
 
 //Get posts
 controller.getPosts = async (req, res) => {
