@@ -51,7 +51,7 @@ controller.login = async (req, res) => {
 //prev login
 controller.prevLogin = async (req, res) => {
     try {
-        const user = await userModel.findById(req.query.user_id)
+        const user = await userModel.findById(req.body.user_id)
         if (!user) {
             res.status(404).json({ data: "User not found" })
         } else {

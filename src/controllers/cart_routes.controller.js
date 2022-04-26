@@ -1,6 +1,6 @@
 const controller = {}
 const cartModel = require('../models/cartModel')
-
+const historyModel = require('../models/historyModel')
 
 controller.getCart = async (req, res) => {
     try {
@@ -34,7 +34,12 @@ controller.removeFromCart = async (req, res) => {
 
 controller.buyCart = async (req, res) => {
     try {
-        res.status(201).json({ data: "Buyed!" })
+        const products = await cartModel.find({ user_id: req.body.user_id }).sort({ created_at: -1 })
+        await Promise.all(products.map((product) => {
+           return historyModel.create({ product_id: product.product_id, user_id: product.user_id })
+        }))
+        await cartModel.deleteMany({ user_id: req.body.user_id })
+        res.status(200).json({ data: "Buyed!" })
     } catch (error) {
         console.log(error)
         res.status(500).json({ data: "Server internal error" })

@@ -15,8 +15,7 @@ controller.postAReview = async (req, res) => {
 
 controller.getReviews = async (req, res) => {
     try {
-        const reviews = await reviewModel.find({  product_id: req.query.product_id })
-                                         .sort({ rating: 1 })
+        const reviews = await reviewModel.find({ product_id: req.query.product_id })
         res.status(200).json(reviews)
     } catch (error) {
         console.log(error)
