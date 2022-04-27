@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 //get User
 controller.getUser = async (req, res) => {
     try {
-        const user = await userModel.findById(req.query.user_id)
+        const user = await userModel.findById(req.query.user_id,'-password')
         if (!user) {
             res.status(404).json({ data: "User not found" })
         } else {
