@@ -20,7 +20,7 @@ controller.getPosts = async (req, res) => {
 //Recent posts
 controller.getRecentPosts = async (req, res) => {
     try {
-        const posts = await postsModel.find({},'-created_at -updatedAt').sort({ updatedAt : -1})
+        const posts = await postsModel.find({},' -updatedAt').sort({ updatedAt : -1})
         res.status(201).json(posts)
     } catch (error) {
         console.log(error)
