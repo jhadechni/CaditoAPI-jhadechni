@@ -6,6 +6,6 @@ const postsSchema = new mongoose.Schema({
     display_name: String,
     description: String,
     price: String,
-}, { timestamps: { createdAt: 'created_at' } })
+}, { timestamps: { createdAt: 'created_date' } })
 
 module.exports = mongoose.model('posts', postsSchema)
