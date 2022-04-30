@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const historySchema = new mongoose.Schema({
-    product_id: mongoose.Schema.Types.ObjectId,
-    user_id: mongoose.Schema.Types.ObjectId,
+    product_id: { type: mongoose.Schema.Types.ObjectId, required: true },
+    user_id: { type: mongoose.Schema.Types.ObjectId, required: true },
 
 })
 
